@@ -23,7 +23,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}">
         <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="{{ asset('js/detail.js?v=1.0') }}"></script>
+        <script src="{{ asset('js/detail.js?v=1.1') }}"></script>
 
     </head>
 
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="f1-buttons">
                                 
-                                    <a href="/recarga" class="btn btn-next">Reacarga Aqui.</a>
+                                    <a href="/recarga" class="btn btn-next">Recharge Here</a> 
                                 </div>
                                     </div>
                                 </div>

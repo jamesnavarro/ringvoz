@@ -47,12 +47,12 @@
                     	
                     		
                     		<fieldset>
-                    		    <h4>Que quieres hacer?</h4>
+                    		    <h4>Development test</h4>
                     			
                             
                                 <div class="f1-buttons">
                                 
-                                    <a href="/recarga" class="btn btn-next">Reacarga Aqui.</a>
+                                    <a href="/recarga" class="btn btn-next">Recharge Here</a>  
                                 </div>
                             </fieldset>
 

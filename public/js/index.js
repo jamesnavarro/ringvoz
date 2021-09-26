@@ -2,13 +2,23 @@ function paises(){
     var monto = $('#monto').val();
     var pais = $('#pais').val();
     if(pais==''){
-        alert('Debes de seleccionar el pais');
+        alert('Select the country'); 
+       document.getElementById("paso1").style.display="block"
+         document.getElementById("paso2").style.display="none"
         return false;
     }
     if(monto==''){
-        alert('Debes de seleccionar el monto');
+        alert('Select the amount');
+         document.getElementById("paso1").style.display="block"
+         document.getElementById("paso2").style.display="none"
+
         return false;
     }
+    document.getElementById("paso1").style.display="none"
+         document.getElementById("paso2").style.display="block"
+         $("#step1").addClass('active');
+    $("#step2").addClass('active');
+    
 }
 function selected(){
     let country = document.getElementById('pais').value;
@@ -25,6 +35,7 @@ function selected(){
     }
     document.getElementById('mount').innerHTML= mount;
     document.getElementById('realmonto').value = mount;
+    
 }
 
 function cardFormValidate(){
@@ -54,32 +65,34 @@ function cardFormValidate(){
     var regYear = /^2021|2022|2023|2024|2025|2026|2027|2028|2029|2030|2031$/;
     var regCVV = /^[0-9]{3,3}$/;
     var regNumber = /^[0-9]{12,12}$/;
-    
+    var monto = $('#monto').val();
+    var pais = $('#pais').val();
+ 
 
     if (cardValid == 0) {
         
-        alert("Debes de digitar el numero de tarjeta");
+        alert("Enter a valid credit card number");
         
         $("#card_number").focus();
         return false;
     }else if(String(valor).length < 16){
-        alert("Debes de digtar un numero de tarjeta valido");
+        alert("Enter a valid credit card number");
         $("#card_number").val('').focus();
         return false;
     }else if (!regMonth.test(expMonth)) {
-        alert("Debes de digitar el mes");
+        alert("Enter the month");
         $("#expiry_month").val('').focus();
         return false;
     }else if (!regYear.test(expYear)) {
-        alert("Debes de digitar el año");
+        alert("Enter the year");
         $("#expiry_year").val('').focus();
         return false;
     }else if (!regCVV.test(cvv)) {
-        alert("Debes de digitar el cvv");
+        alert("Enter the cvv");
         $("#cvv").focus();
         return false;
     }else if (!regName.test(cardName)) {
-        alert("Debes de digitar el nombre de la tarjeta");
+        alert("Enter the type of card");
         $("#name_on_card").val('').focus();
         return false;
     }else{
@@ -95,7 +108,7 @@ $('#frmCrear').on('submit', function(e){
     e.preventDefault();
     let form = $(this)[0];
     let datos = new FormData(form);
-    axios.post(form.action, datos).then((res) => {
+    axios.post(form.action, datos).then((res) => { 
         Swal.fire(
             'Good job!',
              res.data.Msj,
@@ -110,7 +123,7 @@ $('#frmCrear').on('submit', function(e){
 
             Swal.fire(
                 'Error!',
-                 'Error al salvar la recarga',
+                 'Failed to save recharge',
                 'danger'
               )
         }

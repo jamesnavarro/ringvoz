@@ -22,7 +22,7 @@ function borrar(id,p){
         dataType : 'json',
         success : function(data){
             alert(data.msj);
-            location.href = '/recarga/'+p;
+            location.href = '/recarga/'+p; 
         }
     });
 }

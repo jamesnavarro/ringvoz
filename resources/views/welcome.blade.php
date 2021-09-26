@@ -23,7 +23,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/index.js?v=1.8"></script>
+        <script src="js/index.js?v=2.3"></script>
 
     </head>
 
@@ -49,25 +49,25 @@
                     			<div class="f1-progress">
                     			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
                     			</div>
-                    			<div class="f1-step active">
+                                    <div class="f1-step active" id="step1">
                     				<div class="f1-step-icon"><i class="fa fa-globe"></i></div>
                     				<p>Step 1</p>
                     			</div>
-                    			<div class="f1-step">
+                    			<div class="f1-step" id="step2">
                     				<div class="f1-step-icon"><i class="fa fa-credit-card"></i></div>
                     				<p>Step 2</p>
                     			</div>
                     		    
                     		</div>
                     		
-                    		<fieldset>
+                                <fieldset id="paso1">
                     		    <h4>Please seleCted the country ant the recharge amount</h4>
                     			<div class="form-group">
                     			    <label class="sr-only" for="f1-first-name">First name</label>
                                     <select name="pais" id="pais" class="f1-first-name form-control" onclick="selected()">
                                         <option value="">Seleted the country</option>
                                         @foreach($country as $pais)
-                                            <option value="{{ $pais['sISOCode'] }}" {{ $pais['sISOCode']=='CO'? 'selected':'' }}>{{ $pais['sName'] }}</option>                                
+                                            <option value="{{ $pais['sISOCode'] }}" >{{ $pais['sName'] }}</option>                                
                                         @endforeach
                                         
                                     </select>
@@ -84,11 +84,11 @@
                                 <h4>Recharge amount $<span id="mount">0</span> 
                                     <br> Local Denomitation: <span id="denomination"></span> </h4>
                                 <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next" id="pasar" onclick="paises()">Next</button>
+                                    <button type="button" class="btn btn-primary" id="pasar" onclick="paises()">Next</button>
                                 </div>
                             </fieldset>
 
-                            <fieldset>
+                                <fieldset id="paso2">
                            
                                 <h4>Pease enter your credit card information</h4>
                                 <div class="form-group">
